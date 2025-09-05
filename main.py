@@ -8,3 +8,16 @@ def deal_card():
     card = random.choice(cards)
     return card
 
+# calculate_score function to calculate and return the total cards or returns zero in case of Blackjack
+def calculate_score(cards):
+    # Return zero in case of Blackjack and ends the game
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+
+    # Replaces the 11 with 1 if the score is over the 21
+    if sum(cards) > 21 and 11 in cards:
+        cards.remove(11)
+        cards.append(1)
+
+    score = sum(cards)
+    return score
