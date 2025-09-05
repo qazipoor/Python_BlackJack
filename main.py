@@ -22,6 +22,23 @@ def calculate_score(cards):
     score = sum(cards)
     return score
 
+# Comparing the score of players to check who is the winner or if it's a draw or Blackjack and prints the result
+def compare(u_score, c_score):
+    if u_score == c_score:
+        return "Draw! 🙃"
+    elif c_score == 0:
+        return "Lose, opponent has Blackjack 😭"
+    elif u_score == 0:
+        return "Win with a Blackjack 😎"
+    elif u_score > 21:
+        return "You went over. You lose 😭"
+    elif c_score > 21:
+        return "Opponent went over. You win 😁"
+    elif u_score > c_score:
+        return "You win 😁"
+    else:
+        return "You lose 😭"
+
 # Initialize and start the game
 def play_game():
     print(logo)
@@ -62,3 +79,4 @@ def play_game():
     # Prints the final scores
     print(f"Your final hand: {user_cards}, final score: {user_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
+    print(compare(user_score, computer_score))
