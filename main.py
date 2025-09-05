@@ -80,3 +80,8 @@ def play_game():
     print(f"Your final hand: {user_cards}, final score: {user_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
     print(compare(user_score, computer_score))
+
+# Adding while loop to keep asking the user if s/he wants to start a new game after the game ends
+while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower() == "y":
+    print("\n" * 20)
+    play_game()
